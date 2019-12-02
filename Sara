@@ -1,0 +1,52 @@
+from math import *
+
+coordinate = []
+# Point A
+xa= input("Enter X for A:")
+ya= input ("Enter Y for A:")
+
+# Point B
+xb= input("Enter X for B:")
+yb= input ("Enter Y for B:")
+
+# Point C
+xc= input("Enter X for C:")
+yc= input ("Enter Y for C:")
+
+# Point D
+xd= input("Enter X for D:")
+yd= input ("Enter Y for D:")
+
+# Point E
+xe= input("Enter X for E:")
+ye= input ("Enter Y for E:")
+
+coordinate.append((xa, ya))
+coordinate.append((xb, yb))
+coordinate.append((xc, yc))
+coordinate.append((xd, yd))
+coordinate.append((xe, ye))
+
+print("The list of coordinates A,B,C,D,E: ")
+print(coordinate)
+
+print(f"{'Points of Polygon':>3} {'x':>10} {'y':>10}")
+print("-" *41)
+print(f"{'A':>7} {xa:>20} {ya:>10}")
+print(f"{'B':>7} {xb:>20} {yb:>10}")
+print(f"{'C':>7} {xc:>20} {yc:>10}")
+print(f"{'D':>7} {xd:>20} {yd:>10}")
+print(f"{'E':>7} {xe:>20} {ye:>10}")
+
+sum_1 = (int(xa)*int(yb))+(int(xb)*int(yc))+(int(xc)*int(yd))+(int(xd)*int(ye))+(int(xe)*int(ya))
+sum_2 = (int(ya)*int(xb))+(int(yb)*int(xc))+(int(yc)*int(xd))+(int(yd)*int(xe))+(int(ye)*int(xa))
+
+print("The result of multiplying the x coordinate of each vertex by the y coordinate of the next vertex:")
+print(f"{sum_1:4.2f}")
+print("The result of multiplying the y coordinate of each vertex by the x coordinate of the next vertex:")
+print(f"{sum_2:4.2f}")
+
+Area= ((int(sum_1)-int(sum_2)) /2)
+
+print( "The area of the irregular polygon: ")
+print(f"{Area:4.2f}")
